@@ -1,0 +1,118 @@
+@import "mapas.less";
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+.marginBotton8 {
+    margin-bottom: 8px; // mixin
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #colors[corPrincipal];
+    color: #colors[textoPositivo];
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media @breakpointMobile {
+        max-width: 80%;
+    }
+    
+    @media @breakpointTablet {
+        max-width: 80%;
+    }
+}
+
+header {
+    padding-bottom: 38px;
+
+    .profile-avatar {
+        display: block;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        width: 300px;
+        border: 6px solid #colors[corApoio1];
+        transition: all ease .5s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.profile-bio {
+    color: #colors[textoNegativo];
+    text-align: center;
+    &-name {
+        font-size: 32px;
+        margin-top: 16px;
+        margin-bottom: 24px;
+    }
+
+    &-subtitle {
+        font-size: 24px;
+        .marginBotton8();
+    }
+
+    &-description {
+        font-size: 18px;
+        opacity: .7;
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 280px;
+    width: 100%;
+    margin: 16px auto;
+    li {
+        img {
+            transition: all ease .3s;
+            &:hover {
+                transform: scale(1.5);
+            }
+        }
+    }
+}
+
+
+.project-list {
+    margin-top: 36px;
+    &-item {
+        a {
+            text-decoration: none;
+            background-color: #colors[corApoio1];
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #colors[corApoio1];
+            transition: all ease 0.5s;
+
+            &:hover {
+                color: #colors[corApoio1];
+                background-color: #colors[corPrincipal];
+            }
+        }
+    }
+
+}
